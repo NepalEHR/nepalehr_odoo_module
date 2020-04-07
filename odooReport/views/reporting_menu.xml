@@ -17,7 +17,8 @@
         parent="menu_reporting_sales"
         sequence="10"  action="sale.action_order_report_all"/>
 
-       <menuitem id="menu_account_reports" name="Financial Reports"
-        parent="menu_reporting_account" />
+      <menuitem name="Invoices" action="action_account_invoice_report_all" 
+      id="menu_action_account_invoice_report_all" parent="menu_reporting_account" 
+      sequence="20"/>
 
 </odoo> 

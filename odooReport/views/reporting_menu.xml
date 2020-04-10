@@ -17,8 +17,14 @@
         parent="menu_reporting_sales"
         sequence="10"  action="sale.action_order_report_all"/>
 
+  <menuitem id="menu_account_financial_reports_tree" 
+  name="Account Reports" parent="menu_reporting_account" action="account.action_account_financial_report_tree" 
+      sequence="19"/>
+
       <menuitem name="Invoices" action="account.action_account_invoice_report_all" 
       id="menu_action_account_invoice_report_all" parent="menu_reporting_account" 
       sequence="20"/>
+
+
 
 </odoo> 

@@ -18,15 +18,31 @@
         parent="menu_reporting_sales"
         sequence="10"  action="sale.action_order_report_all"/>
 
-  
+   <menuitem id="menu_reporting_account_BI" 
+       name="Business Intelligence"
+       parent="menu_reporting_account"
+        sequence="21"/>
 
       <menuitem name="Invoices" action="account.action_account_invoice_report_all" 
-      id="menu_action_account_invoice_report_all" parent="menu_reporting_account" 
-      sequence="20"/>
+      id="menu_action_account_invoice_report_all" parent="menu_reporting_account_BI" 
+      sequence="56"/>
+  <menuitem id="menu_reporting_account_pdf" 
+       name="PDF Reports"
+       parent="menu_reporting_account"
+        sequence="22"/>
+ <menuitem id="menu_account_report_pl"
+  name="Profit and Loss"
+   action="account.action_account_report_pl" parent="menu_reporting_account_pdf"/>
+
+
+
+ 
 
       <menuitem id="menu_account_financial_reports_tree" 
   name="Account Reports" parent="menu_reporting_config" action="account.action_account_financial_report_tree" 
       sequence="35"/>
+
+     
 
  <menuitem id="menu_account_report_tree_hierarchy"
   name="Account Reports Hierarchy"

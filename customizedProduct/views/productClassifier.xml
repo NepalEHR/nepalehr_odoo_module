@@ -9,14 +9,10 @@
  <xpath expr="//notebook" position="before">
  <group>
                	<group name="group_left">
-                    <field name="donation"  />
-                    <field name="govtSupply" />
-                    <field name="dentalItem"  />
+                    <field name="product_clasification"  />
                       </group>
               	<group name="group_right">
 
-                    <field name="mohpEM" />
-                    <field name="orphanDrug"  />
                   </group>
                 </group>
             </xpath>
@@ -28,11 +24,7 @@
     <field name="inherit_id" ref="product.product_template_search_view"/>
 	<field name="arch" type="xml">
 	<search>
-	   <filter string="Donated" name="filter_to_donate" domain="[('donation','=',1)]"/>
-	   <filter string="Supplied by Governmnet" name="filter_to_donate" domain="[('govtSupply','=',1)]"/>
-	   <filter string="Is dental Item" name="filter_to_donate" domain="[('dentalItem','=',1)]"/>
-	   <filter string="Supplied by MOHM" name="filter_to_donate" domain="[('mohpEM','=',1)]"/>
-	   <filter string="Is Orphan Drug" name="filter_to_donate" domain="[('orphanDrug','=',1)]"/>
+	  <field name="product_clasification"  />
 	 </search>
 	</field>
 </record>

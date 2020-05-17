@@ -1,3 +1,3 @@
-from . import custom_product_model
+import models
 
 

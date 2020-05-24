@@ -18,8 +18,8 @@
     'data': [
        
         'views/productClassifier.xml',
-        'views/productClassificationView.xml'
-       
+        'views/productClassificationView.xml',
+        'views/partnerCusotmization.xml'
    
     ],
 }

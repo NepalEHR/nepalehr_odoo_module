@@ -2,7 +2,7 @@
 <odoo>
 <!-- for list tree view -->
 <record id="view_tree_classification" model="ir.ui.view">
-	<field name="name">Product Classification List</field>
+	<field name="name">Supplier Category List</field>
 	<field name="model">product.classification</field>
 	<field name="arch" type="xml">
 	<tree>
@@ -14,7 +14,7 @@
 <!-- for search view -->
 
 <record id="view_search_classification" model="ir.ui.view">
-	<field name="name">Product Classification  Filters</field>
+	<field name="name">Supplier Category  Filters</field>
 	<field name="model">product.classification</field>
 	<field name="arch" type="xml">
 	<search>
@@ -33,7 +33,7 @@
 
 <!-- For form view-->
 	<record id="view_form_classification_task" model="ir.ui.view">
-		<field name="name">Product Classification  form</field>
+		<field name="name">Supplier Category  form</field>
 		<field name="model">product.classification</field>
 		<field name="arch" type="xml">
 		<form string="Insurance Task">
@@ -57,7 +57,7 @@
 
 
   <record id="action_product_classification" model="ir.actions.act_window">
-            <field name="name">Product Classification</field>
+            <field name="name">Supplier Category</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">product.classification</field>
             <field name="view_type">form</field>

@@ -2,7 +2,7 @@
 from odoo import models, fields, api
 class ProductClassification(models.Model):
 	_name = 'product.classification'
-	_description = 'Product Classification'
+	_description = 'Supplier Category'
 	category_name = fields.Char('Category', required=True)
 	is_active  =  fields.Boolean('Is Active?')
 	@api.multi

@@ -18,7 +18,7 @@
     'data': [
        
        'views/stock_picking.xml',
-       'report/delivery_slip.xml'
-   
+       'report/delivery_slip.xml',
+        'views/stock_transfer.xml'
     ],
 }

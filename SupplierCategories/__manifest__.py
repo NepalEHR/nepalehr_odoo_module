@@ -1,8 +1,8 @@
 
 # -*- coding: utf-8 -*-
 {
-'name':'Product Customized',
-'description':'Added some information about product',
+'name':'Product Categories',
+'description':'Add categories to suppliers',
 'author':'Possible Health',
 'website': 'https://www.nepalehr.org/',
 'application': True,
@@ -17,8 +17,7 @@
     # always loaded
     'data': [
        
-        'views/productClassifier.xml',
-        'views/productClassificationView.xml',
+        'views/supplierClassificationView.xml',
         'views/partnerCusotmization.xml'
    
     ],

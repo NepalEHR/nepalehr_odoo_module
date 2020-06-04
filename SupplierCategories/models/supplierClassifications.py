@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
-class ProductClassification(models.Model):
-	_name = 'product.classification'
+class SupplierClassification(models.Model):
+	_name = 'supplier.classification'
 	_description = 'Supplier Category'
 	category_name = fields.Char('Category', required=True)
 	is_active  =  fields.Boolean('Is Active?')

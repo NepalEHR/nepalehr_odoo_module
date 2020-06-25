@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    
+        <record id="stock.action_picking_tree4_picking_to_invoice" model="ir.actions.act_window">
+            <field name="name">On Incoming Shipments elico</field>
+            <field name="res_model">stock.picking.in</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="domain">[
+            '|',
+            '&amp;',('type','=','in'),('return','=','none'),
+            '&amp;',('type','=','out'),('return','=','supplier')
+            ]
+            </field>
+            <field name="context">{"contact_display": "partner_address","search_default_done": 1, "search_default_to_invoice": 1}</field>
+            <field name="search_view_id" eval="False"/>
+            <field name="help" type="html">
+              <p>
+                Here you can track all the product receptions of purchase
+                orders where the invoicing is "Based on Incoming Shipments",
+                and for which you have not received a supplier invoice yet.
+                You can generate a supplier invoice based on those receptions.
+              </p>
+            </field>
+        </record>
+        <menuitem action="stock.action_picking_tree4_picking_to_invoice"
+            id="menu_action_picking_tree4_picking_to_invoice_elico" name="On Incoming Shipments elico"
+            parent="purchase.menu_purchase_control" sequence="91"/>
+        
+
+
+    
+        <record id="action_move_get_mo" model="ir.actions.server">
+            <field name="name">Manufacturing Order</field>
+            <field name="model_id" ref="stock.model_stock_move"/>
+            <field name="state">code</field>
+            <field name="code">action = obj.action_pop_mo(context=context)</field>
+        </record>
+        
+        <!-- MO -->
+	    <record id="mrp_production_form_view_auto_mo" model="ir.ui.view">
+	        <field name="name">mrp_production_form_view_auto_mo</field>
+	        <field name="model">mrp.production</field>
+	        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+	        <field name="arch" type="xml">
+	            <field name='origin' position="after">
+	                <field name="last_exception"/>
+	           </field>
+	            <!-- <xpath expr="/form/sheet/notebook/page[@string='Consumed Products']/group/group/field/tree/field[@name='prodlot_id']" position="before">
+	                <field name="qty_available"/>
+	           </xpath> -->
+	        </field>
+	    </record>
+        
+
+	
+
+
+
+    </data>
+</odoo>

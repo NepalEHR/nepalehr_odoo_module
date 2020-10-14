@@ -13,6 +13,9 @@ class ProductionLot(models.Model):
     def name_get(self):
         result = []
         for record in self:
-            record_name = record.name + '[' + str(record.quant_ids[(len(record.quant_ids)-1)].qty)+ ']'
+            try:
+                record_name = record.name + '[' + str(record.quant_ids[(len(record.quant_ids)-1)].qty)+ ']'
+            except:
+                record_name = record.name + '[' + ']'
             result.append((record.id, record_name))
         return result

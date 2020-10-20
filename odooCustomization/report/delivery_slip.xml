@@ -87,53 +87,27 @@
                                         <span  t-field="pack_operation.package_id"/>
                                     </t>
                                 </td>
-                                <t t-if="has_serial_number">
-                                    <td t-if="pack_operation.pack_lot_ids">
-                                        <table class="table table-condensed" t-if="pack_operation.pack_lot_ids">
-                                            <tr t-foreach="pack_operation.pack_lot_ids" t-as="packlot">
-                                                <td>
-                                                    <span t-field="packlot.lot_id"/>
-                                                    <t t-if="not packlot.lot_id">
-                                                        <span t-field="packlot.lot_name"/>
-                                                    </t>
-                                                </td>
-                                                <!-- <td name="lot_qty">
-                                                    <span t-field="packlot.qty"/>
-                                                </td> -->
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td t-if="not pack_operation.pack_lot_ids"/>
-                                </t>
-                                <td class="text-center">
-                                    <span t-if="pack_operation.package_id">:</span>
-                                    <span t-field="pack_operation.package_id"/>
-                                    <span t-field="pack_operation.qty_done_uom_ordered"/>
-                                    <t t-if="pack_operation.linked_move_operation_ids">
-                                        <span t-field="pack_operation.linked_move_operation_ids[0].move_id.product_uom"></span>
-                                    </t>
-                                    <t t-else="1">
-                                        <span t-field="pack_operation.product_uom_id"></span>
-                                    </t>
-                                </td>
-                                  <t t-if="has_serial_number">
-                                    <td t-if="pack_operation.pack_lot_ids">
-                                        <table class="table table-condensed" t-if="pack_operation.pack_lot_ids">
-                                            <tr t-foreach="pack_operation.pack_lot_ids" t-as="packlot">
-                                                <td>
-                                                    <span t-field="packlot.sale_price"/>
-                                                    <t t-if="not packlot.lot_id">
-                                                        <span t-field="packlot.sale_price"/>
-                                                    </t>
-                                                </td>
-                                                <!-- <td name="lot_qty">
-                                                    <span t-field="packlot.qty"/>
-                                                </td> -->
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td t-if="not pack_operation.pack_lot_ids"/>
-                                </t>
+                               
+
+ <td class="text-center"> 
+                                 
+                                 <t t-foreach="request.env['purchase.order'].search([('name', '=', o.origin)], limit=1)" t-as="obj">
+                                               <t t-foreach="obj.order_line" t-as="product_order">
+
+                                                <t t-if="product_order.product_id == pack_operation.product_id">
+                                               <span t-field="product_order.product_qty"/>
+                                                </t>
+
+
+                                              </t>
+                                                                
+                                              
+                                                
+                                  </t>
+                                  </td>
+
+
+
                                  <td class="text-center"> 
                                  
                                  <t t-foreach="request.env['purchase.order'].search([('name', '=', o.origin)], limit=1)" t-as="obj">
